@@ -1,0 +1,22 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  },
+  "rules": {
+    "yoda": ["error", "never", { "exceptRange": true }],
+    "import/extensions": ["error", "always", { "ignorePackages": true }],
+    "import/no-unresolved": ["error", { "ignore": ["react"] } ],
+    "react/jsx-filename-extension": 0,
+    "react/prefer-stateless-function": [2, { "ignorePureComponents": true }],
+  }
+}
