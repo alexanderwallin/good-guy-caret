@@ -19,4 +19,5 @@ This is handy when:
 
 * you need carets but don't want to include an entire icon font or library;
 * the icon font or library you're using have a filled or stroked version bot not the other, and because you are the Elvis of web development you want both;
-* the graphic designer naively puts a nice box shadow on the tooltip caret, and no one (not even you) wants to hear you explain that *it's actually quite tricky*: Good Guy Caret will shadow your box;
+* the graphic designer naively puts a nice box shadow on the tooltip caret, and no one (not even you) wants to hear you explain that *it's actually quite tricky*: Good Guy Caret will shadow your box; or
+* you believe there are too many HTTP requests already roaming the Internet, and hence adhere to inline `<svg>` whenever you can.
