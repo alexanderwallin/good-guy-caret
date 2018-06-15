@@ -43,16 +43,28 @@ export default class Caret extends PureComponent {
     ]).isRequired,
     size: PropTypes.number,
     ratio: PropTypes.number,
+    style: PropTypes.shape({}),
+    shadow: PropTypes.string,
   }
 
   static defaultProps = {
     color: null,
     size: 16,
     ratio: 2,
+    style: {},
+    shadow: null,
   }
 
   render() {
-    const { color, direction, size, ratio, ...props } = this.props
+    const {
+      color,
+      direction,
+      size,
+      ratio,
+      shadow,
+      style,
+      ...props
+    } = this.props
 
     const width =
       direction === Direction.UP || direction === Direction.DOWN
@@ -63,11 +75,19 @@ export default class Caret extends PureComponent {
         ? size / ratio
         : size
 
+    const defaultStyles =
+      shadow === null
+        ? {}
+        : {
+            filter: `drop-shadow(${shadow})`,
+          }
+
     return (
       <svg
         viewBox={`0 0 ${width} ${height}`}
         width={width}
         height={height}
+        style={{ ...defaultStyles, ...style }}
         {...props}
       >
         <polygon
