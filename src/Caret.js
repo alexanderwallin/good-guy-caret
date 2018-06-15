@@ -34,7 +34,6 @@ const getCaretPolygonPointsPath = (direction, size, ratio) => {
  */
 export default class Caret extends PureComponent {
   static propTypes = {
-    color: PropTypes.string,
     direction: PropTypes.oneOf([
       Direction.UP,
       Direction.DOWN,
@@ -43,24 +42,28 @@ export default class Caret extends PureComponent {
     ]).isRequired,
     size: PropTypes.number,
     ratio: PropTypes.number,
+    fill: PropTypes.string,
+    stroke: PropTypes.string,
     style: PropTypes.shape({}),
     shadow: PropTypes.string,
   }
 
   static defaultProps = {
-    color: null,
     size: 16,
     ratio: 2,
+    fill: null,
+    stroke: null,
     style: {},
     shadow: null,
   }
 
   render() {
     const {
-      color,
       direction,
       size,
       ratio,
+      fill,
+      stroke,
       shadow,
       style,
       ...props
@@ -92,7 +95,8 @@ export default class Caret extends PureComponent {
       >
         <polygon
           points={getCaretPolygonPointsPath(direction, size, ratio)}
-          fill={color}
+          fill={fill}
+          stroke={stroke}
         />
       </svg>
     )

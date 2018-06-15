@@ -12,7 +12,7 @@ Good Guy Caret allows you to easily create carets of different styles and ratios
 ```js
 import Caret, { Direction } from 'good-guy-caret'
 
-<Caret direction={Direction.DOWN} size={10} ratio={2} />
+<Caret direction={Direction.DOWN} size={10} ratio={2} fill="deeppink" />
 ```
 
 This is handy when:
